@@ -12,7 +12,15 @@ except InvalidMarksError as e:
 
 print(c)
 
+
+c = Course("X"); c.add_student("ali", 88)
+c.remove_student("ali")
+print(len(c))
+try:
+    c.remove_student("zara")
+except KeyError as e:
+    print("KeyError:", e)
+
 course = load_course("Programming for AI", "marks.txt")
 print(course)
 print("Top student:", course.top_student())
-
